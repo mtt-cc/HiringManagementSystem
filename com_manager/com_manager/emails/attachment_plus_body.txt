@@ -1,0 +1,10 @@
+From: Emilio Joseph Grieco <s317869@studenti.polito.it>
+Date: Wed, 22 May 2024 17:37:46 +0200
+Message-ID: null
+Subject: Email con body + Attachments
+Content: 
+
+
+
+Ciao questa mail contiene un VIRUS!
+Attachments: [dark.png]

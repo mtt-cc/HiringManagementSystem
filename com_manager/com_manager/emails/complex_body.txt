@@ -1,0 +1,8 @@
+From: Lorenzo Sebastiano Mathis <lorenzomath@gmail.com>
+Date: Wed, 22 May 2024 19:36:06 +0200
+Message-ID: <CALE5N_JBCjEwO4mo4nunMCqZm3qOw8-bCajtk=gZcnm9OdrYnw@mail.gmail.com>
+Subject: Test html
+Content: 
+<div dir="ltr"><b>Grassetto</b><div><b><br></b></div><div><i>Italico</i><i style="font-weight:bold"> grassetto</i></div><div><b><i><br></i></b></div><div><u>sottolineato</u></div><div><u><br></u></div><div><img src=http://localhost:8080/documents/ANGjdJ-t4wd_qQaQln-BaT04CrTWJspTWyGH6_-VQ3x9xvKSS3MJp9rAgaK0SEjThz_r8gqtAhP2-RoweVzh7__jOP25HxBwvNOVjJLMPHwOx1Tw36ssYT6tQyQqdzqOtj9PwEwzHtRxxSVx3EXO0x14Hgr_04zvwZYoZF6zuzYBAb1HBbUrUmhLXTXln76dKxkuM1FLSGpV2QHxUTsjRkPNth-YuHHb8OUgg2r5DvxEnIOyoUtlL82vRit-ao028yNKo9ljtRlKI4KgKpkfUju42S86kNN7F4jTSQxwmiZsegjUAC_gGcWg98-_nWe2cv7RqX_cG_fPCLRB3JXE15bfY1N18qPXUQWQbn39Pq6CsGK4HTK8J4q8ekvam8BY4w3NftshDVaLKk4Fx0dp/data alt="images.png" width="225" height="225"><br></div></div>
+
+Attachments: []

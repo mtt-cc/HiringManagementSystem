@@ -1,0 +1,46 @@
+@import "bootstrap/dist/css/bootstrap.min.css";
+
+
+/* ------ HEADER ------ */
+header img {
+    width: 5rem;
+    height: 5rem;
+    border-radius: 1rem;
+    box-shadow: 0 0 25px 2px rgba(0,0,0,0.45)
+
+}
+
+header h1 {
+    font-size: 2.5rem;
+    height: 2.5rem;
+    font-weight: bold;
+}
+
+footer {
+    height: 1.5rem;
+}
+
+.custom-nav-btn {
+    background: transparent;
+    color: white;
+    font-weight: bold;
+    border: none;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    transition: color 0.3s ease;
+}
+
+.custom-nav-btn:hover {
+    color: black; 
+}
+
+.custom-nav-btn:focus {
+    outline: none;
+}
+
+.dash-box {
+    border: 3px solid #dee2e6; 
+    border-radius: 1rem; 
+    padding: 1rem; 
+    margin: 20px; 
+}

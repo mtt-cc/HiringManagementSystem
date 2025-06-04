@@ -1,0 +1,42 @@
+spring:
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: http://localhost:9090/realms/apiGateway
+
+  application:
+    name: document_store
+  jpa:
+    show-sql: false
+    hibernate:
+      ddl-auto: update
+  docker:
+    compose:
+      file: ./document_store/compose.yaml
+  mvc:
+    problemdetails:
+      enabled: true
+
+  springdoc:
+    swagger-ui:
+      enabled: true
+      operations-sorter: alpha
+      tags-sorter: alpha
+    api-docs:
+      enabled: true
+    packages-to-scan: it.polito.waii_24.g20.document_store.controllers
+
+  servlet:
+    multipart:
+      max-file-size: 25MB
+      max-request-size: 25MB
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/ds_database
+    username: ds_user
+    password: ds_secret
+    driver-class-name: org.postgresql.Driver
+
+server:
+  port: 8083

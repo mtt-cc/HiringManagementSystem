@@ -1,0 +1,58 @@
+spring:
+  application:
+    name: api_gateway
+  security:
+    oauth2:
+      client:
+        provider:
+          keycloak:
+            issuer-uri: http://localhost:9090/realms/apiGateway
+        registration:
+          apiGatewayClient:
+            provider: keycloak
+            client-id: apiGatewayClient
+            client-secret: JM29kI7D4TDVkdrsMqOjlNWHegfT7JcF
+            scope:
+              - openid
+              # grants the refresh token
+              - offline_access
+              # from slide 37
+              - roles
+            authorization-grant-type: authorization_code
+            redirect-uri: http://localhost:8080/login/oauth2/code/apiGatewayClient
+
+
+  cloud:
+    gateway:
+      mvc:
+        http-client:
+          type: autodetect
+        routes:
+          - id: frontend
+            uri: http://localhost:3000
+            predicates:
+              - Path=/
+            filters:
+              - TokenRelay
+              - RedirectTo=301, http://localhost:3000/ui
+          - id: com_manager
+            uri: http://localhost:8081
+            predicates:
+              - Path=/API/v1/com_manager/**
+            filters:
+              - StripPrefix=3
+              - TokenRelay
+          - id: crm
+            uri: http://localhost:8082
+            predicates:
+              - Path=/API/v1/crm/**
+            filters:
+              - StripPrefix=3
+              - TokenRelay
+          - id: document_store
+            uri: http://localhost:8083
+            predicates:
+              - Path=/API/v1/document_store/**
+            filters:
+              - StripPrefix=3
+              - TokenRelay

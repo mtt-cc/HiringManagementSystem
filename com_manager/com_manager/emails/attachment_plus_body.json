@@ -1,0 +1,146 @@
+{
+  "historyId": "2452",
+  "id": "18fa0f3b6d0ecf8c",
+  "internalDate": "1716392266000",
+  "labelIds": ["UNREAD", "INBOX"],
+  "payload": {
+    "body": { "size": 0 },
+    "filename": "",
+    "headers": [
+      { "name": "Delivered-To", "value": "consegnamoentrole2359@gmail.com" },
+      {
+        "name": "Received",
+        "value": "by 2002:a05:7208:5342:b0:83:9a33:1fd2 with SMTP id q2csp470303rbd;        Wed, 22 May 2024 08:37:58 -0700 (PDT)"
+      },
+      {
+        "name": "X-Google-Smtp-Source",
+        "value": "AGHT+IEqYueynogP15tG/Acut5rlI5SPSiU7fjMF5zIFak61nozmgcGKymMkpdBeqyBuThWrCXnx"
+      },
+      {
+        "name": "X-Received",
+        "value": "by 2002:a17:906:3ac1:b0:a59:bae0:b12c with SMTP id a640c23a62f3a-a62281e18cdmr202916066b.48.1716392277946;        Wed, 22 May 2024 08:37:57 -0700 (PDT)"
+      },
+      {
+        "name": "ARC-Seal",
+        "value": "i=1; a=rsa-sha256; t=1716392277; cv=none;        d=google.com; s=arc-20160816;        b=H19DkSHw4K2BeSiJrUMGLpcPKciGKenAzkPLp/k7w4WkF0Wq/8cyylS+kFrlHAJxDc         TeU+yRI43YvdSbZ0zhwLt1djKxO6rM0cPzsv10utUFZtShRg229qEGcX+W1QeSpazBoQ         aV5cX3RJEdpF5dR2/7vranjenC7MeXcLKLLLeHoYkP4ObH1G6Px/p5IsjPR+fMcmrIao         QSMowqtpvpBm7YNRlEzN/GfkdOXFzcpWibUjxkN8mqVGPGQb80iabCoP9/GYRprv+fV8         BbKrxUcIqonoW0IraIKLb48WlGfmDfqWH9XslsCaFuteMncFaFy4FbX1ye9suC9l7LXP         dOIg=="
+      },
+      {
+        "name": "ARC-Message-Signature",
+        "value": "i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;        h=to:date:message-id:subject:mime-version:from:dkim-signature;        bh=YJ8pWbqfYJYVx2ZUHeigBcSDB6zJXOKR1SXBnNDuuy0=;        fh=H9gt7uTCdY+44fsnp0WbNORvgigF59XDoAlm9JXknrA=;        b=n6OHSlzxRHOVBOJSeLpfOkgTqFp8o3om6JfEh1Pf3PllmJfL4+JORK1g3VnY1SjtsO         y7qcZPIs5j/0EjtT1IwQpuqUBE82WOgbAhvSfMB73rop3IKJ8veM52yOhBWcebXw0R0G         rZZXGpqEI/nwGfZ+2SQXur2YpaLmzIYDh4dDvlMNcvonuY5cl0bgMFxb7Ldvu98PuCB/         GABQh1SxexPvU5CyR1evpDxtEmBVLyU0sjfd7ba2XhlneYIfhYkYtx7w5GQeawdaUNgQ         i4LoaNObpk9L9Hj6N87jgjhjJvD5+vVktekyJ2z3p9FfKHQPGpGDI7/mwgLwq5CnLsRR         gaSw==;        dara=google.com"
+      },
+      {
+        "name": "ARC-Authentication-Results",
+        "value": "i=1; mx.google.com;       dkim=pass (test mode) header.i=@studenti.polito.it header.s=y2k10 header.b=OJxuJ0Xx;       spf=pass (google.com: domain of s317869@studenti.polito.it designates 130.192.55.110 as permitted sender) smtp.mailfrom=s317869@studenti.polito.it;       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=studenti.polito.it"
+      },
+      { "name": "Return-Path", "value": "<s317869@studenti.polito.it>" },
+      {
+        "name": "Received",
+        "value": "from compass.polito.it (compass.polito.it. [130.192.55.110])        by mx.google.com with ESMTPS id a640c23a62f3a-a5a17be7073si1544489766b.807.2024.05.22.08.37.57        for <consegnamoentrole2359@gmail.com>        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);        Wed, 22 May 2024 08:37:57 -0700 (PDT)"
+      },
+      {
+        "name": "Received-SPF",
+        "value": "pass (google.com: domain of s317869@studenti.polito.it designates 130.192.55.110 as permitted sender) client-ip=130.192.55.110;"
+      },
+      {
+        "name": "Authentication-Results",
+        "value": "mx.google.com;       dkim=pass (test mode) header.i=@studenti.polito.it header.s=y2k10 header.b=OJxuJ0Xx;       spf=pass (google.com: domain of s317869@studenti.polito.it designates 130.192.55.110 as permitted sender) smtp.mailfrom=s317869@studenti.polito.it;       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=studenti.polito.it"
+      },
+      {
+        "name": "Received",
+        "value": "from compass-fwd (localhost [127.0.0.1]) by compass.polito.it (Postfix) with ESMTP id 83A6F6002084 for <consegnamoentrole2359@gmail.com>; Wed, 22 May 2024 17:37:57 +0200 (CEST)"
+      },
+      {
+        "name": "Received",
+        "value": "from localhost (localhost [127.0.0.1]) by compass.polito.it (Postfix) with ESMTP id 819926002062 for <consegnamoentrole2359@gmail.com>; Wed, 22 May 2024 17:37:57 +0200 (CEST)"
+      },
+      {
+        "name": "Authentication-Results",
+        "value": "compass.polito.it (amavisd-new); dkim=pass (1024-bit key) reason=\"pass (just generated, assumed good)\" header.d=studenti.polito.it"
+      },
+      {
+        "name": "DKIM-Signature",
+        "value": "v=1; a=rsa-sha256; c=relaxed/simple; d= studenti.polito.it; h=x-mailer:to:date:date:message-id:subject :subject:mime-version:content-type:content-type:from:from :received:received; s=y2k10; t=1716392277; bh=QKdbnqi3FWrtbJjOQq aD619ptzJiwSJI/BnG5k9hR9o=; b=OJxuJ0XxeJODmO1q4JsJY0K82bnTIUZQIY O02br4K2zdlXG5Sscp86EjGynFqfQqa3As3LstL+Jy8nnzSKlgxMGBSZBA5xl154 6rtrauSU/TS3yoqVuLmxCPqaAM1hDdaxoGk2XJwd3NMl67EhqlasB/7LwOsJGJvi THZOZs9/Y="
+      },
+      {
+        "name": "X-Virus-Scanned",
+        "value": "amavisd-new at studenti.polito.it"
+      },
+      { "name": "X-Spam-Flag", "value": "NO" },
+      { "name": "X-Spam-Score", "value": "-6.5" },
+      { "name": "X-Spam-Level", "value": "" },
+      {
+        "name": "X-Spam-Status",
+        "value": "No, score=-6.5 tagged_above=-100 required=3.5 tests=[ALL_TRUSTED=-5, AWL=0.000, BAYES_00=-1.5] autolearn=ham"
+      },
+      {
+        "name": "Received",
+        "value": "from compass.polito.it ([127.0.0.1]) by localhost (compass.polito.it [127.0.0.1]) (amavisd-new, port 10026) with ESMTP id Scn_KTG9DUWt for <consegnamoentrole2359@gmail.com>; Wed, 22 May 2024 17:37:57 +0200 (CEST)"
+      },
+      { "name": "X-AccountStatus", "value": "yes" },
+      {
+        "name": "Received",
+        "value": "from smtpclient.apple (93-39-144-5.ip76.fastwebnet.it [93.39.144.5]) (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits)) (No client certificate requested) (Authenticated sender: s317869@studenti.polito.it) by compass.polito.it (Postfix) with ESMTPSA id 0B8AD6002082 for <consegnamoentrole2359@gmail.com>; Wed, 22 May 2024 17:37:57 +0200 (CEST)"
+      },
+      {
+        "name": "From",
+        "value": "Emilio Joseph Grieco <s317869@studenti.polito.it>"
+      },
+      {
+        "name": "Content-Type",
+        "value": "multipart/mixed; boundary=\"Apple-Mail=_66539B85-A980-4738-AB98-E827E6181E4C\""
+      },
+      {
+        "name": "Mime-Version",
+        "value": "1.0 (Mac OS X Mail 16.0 \\(3774.500.171.1.1\\))"
+      },
+      { "name": "Subject", "value": "Email con body + Attachments" },
+      {
+        "name": "Message-Id",
+        "value": "<9B754E96-C4C1-41EC-B6D4-BDA8B61E79ED@studenti.polito.it>"
+      },
+      { "name": "Date", "value": "Wed, 22 May 2024 17:37:46 +0200" },
+      { "name": "To", "value": "consegnamoentrole2359@gmail.com" },
+      { "name": "X-Mailer", "value": "Apple Mail (2.3774.500.171.1.1)" }
+    ],
+    "mimeType": "multipart/mixed",
+    "partId": "",
+    "parts": [
+      {
+        "body": {
+          "data": "DQoNCg0KQ2lhbyBxdWVzdGEgbWFpbCBjb250aWVuZSB1biBWSVJVUyE=",
+          "size": 41
+        },
+        "filename": "",
+        "headers": [
+          { "name": "Content-Transfer-Encoding", "value": "7bit" },
+          { "name": "Content-Type", "value": "text/plain; charset=us-ascii" }
+        ],
+        "mimeType": "text/plain",
+        "partId": "0"
+      },
+      {
+        "body": {
+          "attachmentId": "ANGjdJ-5JnefRFkPMVJakD-p4CdCeL_uYglGM512ZQNfr7-9QAif7Fq-6pRFBqiyOnd16RWM478hpNgWA5dAIg5jWMIotldCiXeDVOfBrxsVzMOKv1eRGfdwGyyzhkBcpwVLZCB63Rwh_YspDDq1DZEfAcc3kIHJeFCwr5qrGd5tNMqAO2zUuP04_Gjd7rXUYPtfKquzxcUvvflaR43bX0fqr-8U5T2WKzZ9v9_-XSOpiMIlekHOpd28u2RUujJQR5CZe0I8rcXXHfrKI2XL5T5SM-7viVW_fTh26WDHkcmzTdsOntAjCk3dYaGj7fuq0fUt-n14UlTx0BSprT0YyGNvhkeKurp82Fe7xpgaVT92z01ntjKvGuqfyKSlQNNA8NdEOM8aTIRvQsRDPZ76",
+          "size": 101454
+        },
+        "filename": "dark.png",
+        "headers": [
+          {
+            "name": "Content-Disposition",
+            "value": "inline; filename=dark.png"
+          },
+          {
+            "name": "Content-Type",
+            "value": "image/png; x-unix-mode=0644; name=\"dark.png\""
+          },
+          { "name": "Content-Transfer-Encoding", "value": "base64" }
+        ],
+        "mimeType": "image/png",
+        "partId": "1"
+      }
+    ]
+  },
+  "sizeEstimate": 144513,
+  "snippet": "Ciao questa mail contiene un VIRUS!",
+  "threadId": "18fa0f3b6d0ecf8c"
+}

@@ -1,0 +1,142 @@
+{
+  "historyId": "2744",
+  "id": "18fa1abfa64b9465",
+  "internalDate": "1716404342000",
+  "labelIds": [
+    "UNREAD",
+    "INBOX"
+  ],
+  "payload": {
+    "body": {
+      "size": 0
+    },
+    "filename": "",
+    "headers": [
+      {
+        "name": "Delivered-To",
+        "value": "consegnamoentrole2359@gmail.com"
+      },
+      {
+        "name": "Received",
+        "value": "by 2002:a59:b692:0:b0:472:4492:1b3d with SMTP id q18csp585952vqj;        Wed, 22 May 2024 11:59:13 -0700 (PDT)"
+      },
+      {
+        "name": "X-Received",
+        "value": "by 2002:a05:6122:3092:b0:4e1:7045:5e21 with SMTP id 71dfb90a1353d-4e2185adfa7mr2893208e0c.12.1716404353674;        Wed, 22 May 2024 11:59:13 -0700 (PDT)"
+      },
+      {
+        "name": "ARC-Seal",
+        "value": "i=1; a=rsa-sha256; t=1716404353; cv=none;        d=google.com; s=arc-20160816;        b=U+NCLRJGwXk9PX3mHHKTN79/nqpIEzaf6xnYhl96YlZdnUlfs3zWaSpm2HWKCvTd+u         iuHnvNfYZ1nP69FJPShi357KPSGJUOIR4E2c0iRVMBiks18TeyORdlQCKDcePHX+9V/b         3J/ap6kuknBGBPplE/EHIUcJPeXy1SFvIwPCZcoTBDtBqiGLGW4sEcLrfjc/6oNvYyol         r3ArLSIjtkDsi2PkVIEilq2/rpanmEYkrV8Fzw2jnLIE9fx7vYVm11mKnE6ajDMtW94f         /RiotXjmay5D6ilKHVrVo0d4QN3eU+Q7F9zjwFgUlR3IOlToCI2/j5h83mKnFE9mCptC         HcLA=="
+      },
+      {
+        "name": "ARC-Message-Signature",
+        "value": "i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;        h=to:subject:message-id:date:from:mime-version:dkim-signature;        bh=/57ecdUXWnGH3IG0speQfc4oLk6vGzikBTTu+vrbfsk=;        fh=H9gt7uTCdY+44fsnp0WbNORvgigF59XDoAlm9JXknrA=;        b=PInfUcRsWMnQD/0DpTodRhltkprrDKMkmFZi8Z0u+9TMZ01SOdkjcVagYZnsiQqs9L         g0Z1eHMs2vYTAGzFM4U3UZgbCOlTlZ8xufD0EOCwDfqzDdjxpPk2e06Kll0S+hRHhES0         pmmbMhruUg+2R8exHbIougWwmz2oShYz93rxJBK3uOHr3Ft2YJj1uzcwV0KkRsu6c+oN         Mo7sFAK4M9vZYlsp3Ekh4jfyqM8K/yuPXdYpELqf+bwk0PuKheao1LQkTrKIhKsALS3J         CGY5RFVHTz0xHzdNVfSFmWppw2Soju81fKez5dfjk3c/ZRvYJCTbRonl2edD4Y7IaK07         y+Tw==;        dara=google.com"
+      },
+      {
+        "name": "ARC-Authentication-Results",
+        "value": "i=1; mx.google.com;       dkim=pass header.i=@gmail.com header.s=20230601 header.b=WE9ITNdw;       spf=pass (google.com: domain of lorenzomath@gmail.com designates 209.85.220.41 as permitted sender) smtp.mailfrom=lorenzomath@gmail.com;       dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=gmail.com"
+      },
+      {
+        "name": "Return-Path",
+        "value": "<lorenzomath@gmail.com>"
+      },
+      {
+        "name": "Received",
+        "value": "from mail-sor-f41.google.com (mail-sor-f41.google.com. [209.85.220.41])        by mx.google.com with SMTPS id 71dfb90a1353d-4df7c0b2a29sor7288580e0c.8.2024.05.22.11.59.13        for <consegnamoentrole2359@gmail.com>        (Google Transport Security);        Wed, 22 May 2024 11:59:13 -0700 (PDT)"
+      },
+      {
+        "name": "Received-SPF",
+        "value": "pass (google.com: domain of lorenzomath@gmail.com designates 209.85.220.41 as permitted sender) client-ip=209.85.220.41;"
+      },
+      {
+        "name": "Authentication-Results",
+        "value": "mx.google.com;       dkim=pass header.i=@gmail.com header.s=20230601 header.b=WE9ITNdw;       spf=pass (google.com: domain of lorenzomath@gmail.com designates 209.85.220.41 as permitted sender) smtp.mailfrom=lorenzomath@gmail.com;       dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=gmail.com"
+      },
+      {
+        "name": "DKIM-Signature",
+        "value": "v=1; a=rsa-sha256; c=relaxed/relaxed;        d=gmail.com; s=20230601; t=1716404353; x=1717009153; dara=google.com;        h=to:subject:message-id:date:from:mime-version:from:to:cc:subject         :date:message-id:reply-to;        bh=/57ecdUXWnGH3IG0speQfc4oLk6vGzikBTTu+vrbfsk=;        b=WE9ITNdwqFDTNN5593r03z+0mV9iT8Uv/RrohLSULaSIlm5b7Jv/5EoFUIt4RMv+eK         jTyuS9GH4AE4QKGAA6DfS+QbCJrGGxuH/GMMFSnY+kHy/Lrf+qJEl/ypafMZWUDiTYAR         utc0c70LtMHaEls2fh/kSmLZ7BEVsm1eRdmRAnuhheFIEXCInZmGVle3Fp9CMw93paDr         2lnVVsB3aGHf/Cnkrq18rZO+e++Jpei2NtaaYAZmAibyy6rKoUyayIxkjAtF8/1XhXXa         LJLL55nvsJfE0ZRoqsinw8m0kfqrzJF3EvAmP/y8Hd2GZK0kGGgiLz0lNXKm9m3Xi6yO         zI/g=="
+      },
+      {
+        "name": "X-Google-DKIM-Signature",
+        "value": "v=1; a=rsa-sha256; c=relaxed/relaxed;        d=1e100.net; s=20230601; t=1716404353; x=1717009153;        h=to:subject:message-id:date:from:mime-version:x-gm-message-state         :from:to:cc:subject:date:message-id:reply-to;        bh=/57ecdUXWnGH3IG0speQfc4oLk6vGzikBTTu+vrbfsk=;        b=ficEr/vFcugAVgyNv+Fc90655Tl+FsQPxaEmhBwnQGI5KbXGNMxoM5NbYXpIAhEdnU         x1GK06rLyKcp1+xAZ/DJQ4NOKACRgzx3IoCCZZZiWwX5pPa3HxDW3lUJYoB7sfZRj96m         9GnSfZh4nb/bMcXxpyQKftlhjblSCUd2VTa7bau1sp81q1D1OAMe/yv5f5lLZVkJ1jLk         ntD+AdunUQQkAwW5WIYTmv1IFS91eNqunwIRK79hj7Oa3cviEExS58IWi0X0FB6Ef9kS         xG9odX5D2jDGWiQo2yH0CmX/uuP3S9kAShY0ooGWLJ9nAzJdde246S5NuOtnz703+HGr         w8Rw=="
+      },
+      {
+        "name": "X-Gm-Message-State",
+        "value": "AOJu0YxiwtWSEMRYtu/PREzPlXUPNvbkhuhHvvDWcupd9WjNP2Q2rL2O ONDrT9dlD91ZbnvvjuiUYCkCxIkWhm96V/bSZtvMGPsj0ShbKvEy/EBEQcmMueUsLvOEP8anjcy /4izBXbW7Pi3ePHbmDYaWF7oG1x+ZzcEt"
+      },
+      {
+        "name": "X-Google-Smtp-Source",
+        "value": "AGHT+IGgn2J5LqsT7aKbr2QoRo4H/fqIve07fuzq7KT/ozP8cxzyd0rnf1YDCR2C5+3GXJfzqBaILM921By5o3PLvCU="
+      },
+      {
+        "name": "X-Received",
+        "value": "by 2002:a05:6122:312a:b0:4d4:e92:1a71 with SMTP id 71dfb90a1353d-4e2185ad047mr2933465e0c.11.1716404353279; Wed, 22 May 2024 11:59:13 -0700 (PDT)"
+      },
+      {
+        "name": "MIME-Version",
+        "value": "1.0"
+      },
+      {
+        "name": "From",
+        "value": "Lorenzo Sebastiano Mathis <lorenzomath@gmail.com>"
+      },
+      {
+        "name": "Date",
+        "value": "Wed, 22 May 2024 20:59:02 +0200"
+      },
+      {
+        "name": "Message-ID",
+        "value": "<CALE5N_JKQ6PH_MES_dsSejtm90z8Lu2p4DpCBYCR4J1Bzhriew@mail.gmail.com>"
+      },
+      {
+        "name": "Subject",
+        "value": "asd"
+      },
+      {
+        "name": "To",
+        "value": "consegnamoentrole2359@gmail.com"
+      },
+      {
+        "name": "Content-Type",
+        "value": "multipart/alternative; boundary=\"000000000000c4adc506190f8740\""
+      }
+    ],
+    "mimeType": "multipart/alternative",
+    "partId": "",
+    "parts": [
+      {
+        "body": {
+          "data": "KmFhYWFhYWFhYWFhYWFhKg0K",
+          "size": 18
+        },
+        "filename": "",
+        "headers": [
+          {
+            "name": "Content-Type",
+            "value": "text/plain; charset=\"UTF-8\""
+          }
+        ],
+        "mimeType": "text/plain",
+        "partId": "0"
+      },
+      {
+        "body": {
+          "data": "PGRpdiBkaXI9Imx0ciI-PGI-YWFhYWFhYWFhYWFhYWE8L2I-PC9kaXY-DQo=",
+          "size": 44
+        },
+        "filename": "",
+        "headers": [
+          {
+            "name": "Content-Type",
+            "value": "text/html; charset=\"UTF-8\""
+          }
+        ],
+        "mimeType": "text/html",
+        "partId": "1"
+      }
+    ]
+  },
+  "sizeEstimate": 5216,
+  "snippet": "aaaaaaaaaaaaaa",
+  "threadId": "18fa1abfa64b9465"
+}

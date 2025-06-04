@@ -1,0 +1,60 @@
+spring:
+  application:
+    name: com_manager
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: http://localhost:9090/realms/apiGateway
+      client:
+        registration:
+          keycloak:
+            client-id: ${CLIENT_ID}
+            client-secret: ${CLIENT_SECRET}
+            authorization-grant-type: client_credentials
+            provider: keycloak
+        provider:
+          keycloak:
+            token-uri: http://localhost:9090/realms/apiGateway/protocol/openid-connect/token
+server:
+  port: 8081
+
+springdoc:
+  swagger-ui:
+    enabled: true
+    operations-sorter: alpha
+    tags-sorter: alpha
+  api-docs:
+    enabled: true
+  packages-to-scan: it.polito.waii_24.g20.com_manager.controllers
+
+camel:
+  component:
+    google-mail-stream:
+      application-name: ${GMAIL_APPLICATION_NAME}
+      client-id: ${GMAIL_CLIENT_ID}
+      client-secret: ${GMAIL_CLIENT_SECRET}
+      refresh-token: ${GMAIL_REFRESH_TOKEN}
+    google-mail:
+      application-name: ${GMAIL_APPLICATION_NAME}
+      client-id: ${GMAIL_CLIENT_ID}
+      client-secret: ${GMAIL_CLIENT_SECRET}
+      refresh-token: ${GMAIL_REFRESH_TOKEN}
+
+microservices:
+  document-store:
+    method: http
+    host: localhost
+    port: 8083
+    url: ${microservices.document-store.method}://${microservices.document-store.host}:${microservices.document-store.port}
+    addRoute: /documents
+    getMetadataRoute: /documents/{id}
+    getContentRoute: /documents/{id}/data
+    embeddedAttachmentRoute: http://localhost:8080/API/v1/document_store/documents/{id}/data
+
+  crm:
+    method: http
+    host: localhost
+    port: 8082
+    url: ${microservices.crm.method}://${microservices.crm.host}:${microservices.crm.port}
+    addMessageRoute: /messages

@@ -1,0 +1,16 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="Run all" type="CompoundRunConfigurationType">
+    <toRun name="Kafka" type="docker-deploy" />
+    <toRun name="Keycloak" type="docker-deploy" />
+    <toRun name="Postgres_CRM" type="docker-deploy" />
+    <toRun name="Postgres_DS" type="docker-deploy" />
+    <toRun name="Zookeeper" type="docker-deploy" />
+    <toRun name="Frontend - Dev" type="js.build_tools.npm" />
+    <toRun name="AnalyticsApplication" type="SpringBootApplicationConfigurationType" />
+    <toRun name="ApiGatewayApplication" type="SpringBootApplicationConfigurationType" />
+    <toRun name="ComManagerApplication" type="SpringBootApplicationConfigurationType" />
+    <toRun name="CrmApplication" type="SpringBootApplicationConfigurationType" />
+    <toRun name="DocumentStoreApplication" type="SpringBootApplicationConfigurationType" />
+    <method v="2" />
+  </configuration>
+</component>

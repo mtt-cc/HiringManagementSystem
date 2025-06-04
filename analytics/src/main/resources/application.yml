@@ -1,0 +1,27 @@
+spring:
+  application:
+    name: analytics
+
+  kafka:
+    bootstrap-servers: localhost:9092
+    consumer:
+      group-id: analytics_group
+      auto-offset-reset: earliest
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+
+  autoconfigure:
+    exclude: org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration
+
+server:
+  port: 9000
+
+logging:
+  level:
+    org:
+      springframework:
+        web: DEBUG
+    com:
+      fasterxml:
+        jackson:
+          databind: DEBUG

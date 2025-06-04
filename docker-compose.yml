@@ -1,0 +1,137 @@
+services:
+#   TODO: Future implementation
+#   frontend:
+#     #  image: frontend:latest  TODO
+#     build:
+#       context: ./frontend
+#       dockerfile: Dockerfile
+#     ports:
+#       - "3000:3000"
+#     networks:
+#       - default_network
+
+#   api_gateway:
+#     # image: api_gateway:latest TODO
+#     build:
+#       context: ./api_gateway
+#       dockerfile: Dockerfile
+#     ports:
+#       - "8080:8080"
+#     depends_on:
+#       keycloak:
+#         condition: service_healthy
+#       frontend:
+#         condition: service_healthy
+#     networks:
+#       - default_network
+#    # restart: always   TODO: da attivare quando gateway è pronto
+
+#   crm:
+# #  image: crm:latest TODO
+#     build:
+#       context: ./crm
+#       dockerfile: Dockerfile
+#     ports:
+#       - "8081:8080"
+#     depends_on:
+#       - keycloak
+#       - postgres_crm
+#     networks:
+#       - default_network
+
+#   com_manager:
+# #  image: com_manager:latest  TODO
+#     build:
+#       context: ./com_manager
+#       dockerfile: Dockerfile
+#     ports:
+#       - "8082:8080"
+#     environment:
+#       GMAIL_CLIENT_SECRET: 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
+#       GMAIL_CLIENT_ID: 827084036884-ct4a9hh5crjgjsa6nq8e9suoa8ld1l7h.apps.googleusercontent.com
+#       GMAIL_APPLICATION_NAME: webappii-lab04
+#       GMAIL_REFRESH_TOKEN: 1//04fXB15ALhHIWCgYIARAAGAQSNwF-L9IrHrhueUGlDH3_gdCO9w6NtQaM3SlpV9jrKLS8v-ejgEssiRi4reEUxt_kec2rzAce8lc
+#     depends_on:
+#       - keycloak
+#     networks:
+#       - default_network
+
+#   document_store:
+# #  image: document_store:latest  TODO
+#     build:
+#       context: ./document_store
+#       dockerfile: Dockerfile
+#     ports:
+#       - "8083:8080"
+#     depends_on:
+#       - keycloak
+#       - postgres_ds
+#     networks:
+#       - default_network
+
+  keycloak:
+    image: keycloak/keycloak
+    ports:
+      - '9090:8080'
+    environment :
+      KEYCLOAK_ADMIN: admin
+      KEYCLOAK_ADMIN_PASSWORD: password
+    volumes:
+      - ./keycloak-config.json:/opt/keycloak/data/import/realms.json
+    command: start-dev  --import-realm
+    networks:
+      - default_network
+    healthcheck:
+      test: [ "CMD-SHELL", "curl -f http://localhost:8080/realms/master || exit 1" ]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+
+  postgres_ds:
+    image: 'postgres:latest'
+    environment:
+      POSTGRES_DB: ds_database
+      POSTGRES_PASSWORD: ds_secret
+      POSTGRES_USER: ds_user
+    ports:
+      - '5432:5432'
+    networks:
+      - default_network
+
+  postgres_crm:
+    image: 'postgres:latest'
+    environment:
+      POSTGRES_DB: crm_database
+      POSTGRES_PASSWORD: crm_secret
+      POSTGRES_USER: crm_user
+    ports:
+      - '5433:5432'
+    networks:
+      - default_network
+
+  zookeeper:
+    image: 'confluentinc/cp-zookeeper:latest'
+    platform: linux/arm64
+    environment:
+      ZOOKEEPER_CLIENT_PORT: 2181
+      ZOOKEEPER_TICK_TIME: 2000
+    ports:
+      - '2181:2181'
+
+  kafka:
+    image: 'confluentinc/cp-kafka:latest'
+    platform: linux/arm64
+    environment:
+      KAFKA_BROKER_ID: 1
+      KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
+      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://localhost:9092
+      KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
+      KAFKA_CREATE_TOPICS: "test-topic:1:1"
+    depends_on:
+      - zookeeper
+    ports:
+      - '9092:9092'
+
+networks:
+  default_network:
+    driver: bridge

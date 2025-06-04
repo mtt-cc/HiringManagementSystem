@@ -1,0 +1,171 @@
+# Test
+
+###
+# @name Get all documents
+# This is a GET request and it is used to "get" data from an endpoint. There is no request body for a GET request, but you can use query parameters to help specify the resource you want data on (e.g., in this request, we have `id=1`).
+# A successful GET response will have a `200 OK` status, and should include some kind of response body - for example, HTML web content or JSON data.
+GET localhost:8080/documents/
+
+> {%
+    // TODO: migrate to HTTP Client Response handler API
+    // pm.test("Status code is 200", function () {
+    //     pm.response.to.have.status(200);
+    // });
+%}
+
+###
+# @name Add document 1
+# This is a POST request, submitting data to an API via the request body. This request submits JSON data, and the data is reflected in the response.
+# A successful POST request typically returns a `200 OK` or `201 Created` response code.
+POST localhost:8080/documents/
+Content-Type: multipart/form-data; boundary=WebAppBoundary
+
+--WebAppBoundary
+Content-Disposition: form-data; name="file"; filename="1eef1c94-2f64-43a0-8102-eb4382ed89dc"
+
+< postman-cloud:///1eef1c94-2f64-43a0-8102-eb4382ed89dc
+--WebAppBoundary
+
+> {%
+    // TODO: migrate to HTTP Client Response handler API
+    // pm.test("Successful POST request", function () {
+    //     pm.expect(pm.response.code).to.be.oneOf([200, 201]);
+    // });
+    //
+%}
+
+###
+# @name Get document Metadata
+GET localhost:8080/documents/1
+
+###
+# @name Get document data
+GET localhost:8080/documents/1/data
+
+###
+# @name Get document Metadata wrong id
+GET localhost:8080/documents/5
+
+###
+# @name Get document data wrong id
+GET localhost:8080/documents/5/data
+
+###
+# @name Add duplicate document 1
+# This is a POST request, submitting data to an API via the request body. This request submits JSON data, and the data is reflected in the response.
+# A successful POST request typically returns a `200 OK` or `201 Created` response code.
+POST localhost:8080/documents/
+Content-Type: multipart/form-data; boundary=WebAppBoundary
+
+--WebAppBoundary
+Content-Disposition: form-data; name="file"; filename="1eef1c94-2f64-43a0-8102-eb4382ed89dc"
+
+< postman-cloud:///1eef1c94-2f64-43a0-8102-eb4382ed89dc
+--WebAppBoundary
+
+> {%
+    // TODO: migrate to HTTP Client Response handler API
+    // pm.test("Successful POST request", function () {
+    //     pm.expect(pm.response.code).to.be.oneOf([200, 201]);
+    // });
+    //
+%}
+
+###
+# @name Add document 2
+# This is a POST request, submitting data to an API via the request body. This request submits JSON data, and the data is reflected in the response.
+# A successful POST request typically returns a `200 OK` or `201 Created` response code.
+POST localhost:8080/documents/
+Content-Type: multipart/form-data; boundary=WebAppBoundary
+
+--WebAppBoundary
+Content-Disposition: form-data; name="file"; filename="1eef1c72-4ab8-4330-a906-e2f1624c986a"
+
+< postman-cloud:///1eef1c72-4ab8-4330-a906-e2f1624c986a
+--WebAppBoundary
+
+> {%
+    // TODO: migrate to HTTP Client Response handler API
+    // pm.test("Successful POST request", function () {
+    //     pm.expect(pm.response.code).to.be.oneOf([200, 201]);
+    // });
+    //
+%}
+
+###
+# @name Update document 1 with 2
+# This is a PUT request and it is used to overwrite an existing piece of data. For instance, after you create an entity with a POST request, you may want to modify that later. You can do that using a PUT request. You typically identify the entity being updated by including an identifier in the URL (eg. `id=1`).
+# A successful PUT request typically returns a `200 OK`, `201 Created`, or `204 No Content` response code.
+PUT localhost:8080/documents/1
+Content-Type: multipart/form-data; boundary=WebAppBoundary
+
+--WebAppBoundary
+Content-Disposition: form-data; name="file"; filename="1eef1c72-4ab8-4330-a906-e2f1624c986a"
+
+< postman-cloud:///1eef1c72-4ab8-4330-a906-e2f1624c986a
+--WebAppBoundary
+
+> {%
+    // TODO: migrate to HTTP Client Response handler API
+    // pm.test("Successful PUT request", function () {
+    //     pm.expect(pm.response.code).to.be.oneOf([200, 201, 204]);
+    // });
+    //
+%}
+
+###
+# @name Update document 1 with correct document
+# This is a PUT request and it is used to overwrite an existing piece of data. For instance, after you create an entity with a POST request, you may want to modify that later. You can do that using a PUT request. You typically identify the entity being updated by including an identifier in the URL (eg. `id=1`).
+# A successful PUT request typically returns a `200 OK`, `201 Created`, or `204 No Content` response code.
+PUT localhost:8080/documents/1
+Content-Type: multipart/form-data; boundary=WebAppBoundary
+
+--WebAppBoundary
+Content-Disposition: form-data; name="file"; filename="1eef35ad-3109-46b0-a851-a91ac48f48e6"
+
+< postman-cloud:///1eef35ad-3109-46b0-a851-a91ac48f48e6
+--WebAppBoundary
+
+> {%
+    // TODO: migrate to HTTP Client Response handler API
+    // pm.test("Successful PUT request", function () {
+    //     pm.expect(pm.response.code).to.be.oneOf([200, 201, 204]);
+    // });
+    //
+%}
+
+###
+# @name Delete document 1
+# This is a DELETE request, and it is used to delete data that was previously created via a POST request. You typically identify the entity being updated by including an identifier in the URL (eg. `id=1`).
+# A successful DELETE request typically returns a `200 OK`, `202 Accepted`, or `204 No Content` response code.
+DELETE localhost:8080/documents/6
+
+> {%
+    // TODO: migrate to HTTP Client Response handler API
+    // pm.test("Successful DELETE request", function () {
+    //     pm.expect(pm.response.code).to.be.oneOf([200, 202, 204]);
+    // });
+    //
+%}
+
+###
+# @name Get document 1 Metadata
+GET localhost:8080/documents/1
+
+###
+# @name Get document 1 data
+GET localhost:8080/documents/1/data
+
+###
+# @name Delete document 1 (already del)
+# This is a DELETE request, and it is used to delete data that was previously created via a POST request. You typically identify the entity being updated by including an identifier in the URL (eg. `id=1`).
+# A successful DELETE request typically returns a `200 OK`, `202 Accepted`, or `204 No Content` response code.
+DELETE localhost:8080/documents/6
+
+> {%
+    // TODO: migrate to HTTP Client Response handler API
+    // pm.test("Successful DELETE request", function () {
+    //     pm.expect(pm.response.code).to.be.oneOf([200, 202, 204]);
+    // });
+    //
+%}

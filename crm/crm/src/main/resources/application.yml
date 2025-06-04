@@ -1,0 +1,54 @@
+spring:
+  jackson:
+    property-naming-strategy: SNAKE_CASE
+
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: http://localhost:9090/realms/apiGateway
+
+  application:
+    name: crm
+  jpa:
+    show-sql: false
+    hibernate:
+      ddl-auto: update
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+  docker:
+    compose:
+      file: ./crm/compose.yaml
+  mvc:
+    problemdetails:
+      enabled: true
+
+  springdoc:
+    swagger-ui:
+      enabled: true
+      operations-sorter: alpha
+      tags-sorter: alpha
+    api-docs:
+      enabled: true
+    packages-to-scan: it.polito.waii_24.g20.crm.controllers
+
+  datasource:
+    url: jdbc:postgresql://localhost:5433/crm_database
+    username: crm_user
+    password: crm_secret
+    driver-class-name: org.postgresql.Driver
+
+#  kafka:
+#    bootstrap-servers: localhost:9092
+
+server:
+  port: 8082
+
+logging:
+  level:
+    org:
+      springframework:
+        web: DEBUG
+    com:
+      fasterxml:
+        jackson:
+          databind: DEBUG
